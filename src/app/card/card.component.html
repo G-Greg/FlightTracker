@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        Aircraft
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="name"><fa-icon [icon]="faTags"></fa-icon> Airline name</label>
+            <input type="text" class="form-control" id="name1" name="name1" placeholder="Enter name" [(ngModel)]="search" disabled="disabled">
+            </div>
+        
+            <div class="mb-3">
+            <label for="departure"><fa-icon [icon]="faPlaneDeparture"></fa-icon> Departure</label>
+            <input type="text" class="form-control" id="departure" name="departure" [(ngModel)]="departure" disabled="disabled">
+            </div>
+        
+            <div class="mb-3">
+            <label for="arrival"><fa-icon [icon]="faPlaneArrival"></fa-icon> Arrival</label>
+            <input type="text" class="form-control" id="arrival" name="arrival" [(ngModel)]="arrival" disabled="disabled">
+            </div>
+        
+            <div class="mb-3">
+            <label for="flightDate"><fa-icon [icon]="faCalendarDay"></fa-icon> Flight date</label>
+            <input type="text" class="form-control" id="flightDate" name="flightDate" [(ngModel)]="flightDate" disabled="disabled">
+            </div>
+        
+            <div class="mb-3">
+            <label for="flightStatus"><fa-icon [icon]="faEarthAmericas"></fa-icon> Flight status</label>
+            <input type="text" class="form-control" id="flightStatus" name="flightStatus" [(ngModel)]="flightStatus" disabled="disabled">
+            </div>
+        </div>
+    <div class="card-footer text-muted">
+        <button class="btn btn-primary btn-block" (click)="close.emit()">Close</button>    
+    </div>
+</div>
+

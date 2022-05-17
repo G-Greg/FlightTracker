@@ -1,0 +1,54 @@
+<section class="planes-container text-center mb-3">
+    <br>
+    <div class="input-group-text col-md-2">
+      <input id="card" type="checkbox" [(ngModel)]="isCardView"><br><label for="card" class="m-1">Card view</label>
+    </div>
+    <br>
+    <table class="table table-striped" *ngIf="!isCardView">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Airline name</th>
+        <th scope="col">Departure</th>
+        <th scope="col">Arrival</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let plane of planes; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td (click)="showCard(plane)">{{ plane.name }}</td>
+        <td (click)="showCard(plane)">{{ plane.departure }}</td>
+        <td (click)="showCard(plane)">{{ plane.arrival }}</td>
+        <td>
+          <a class="btn btn-primary m-1" (click)="onSelect(plane)" routerLink="/aircraft/edit/{{i+1}}">Edit</a>
+          <a class="btn btn-danger" (click)="delete(plane)">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="container" *ngIf="isCardView" >
+      <div class="row" id="card" >
+        <div class="card col-md-3 m-1" *ngFor="let plane of planes; index as i">
+          <div class="card-header">{{i+1}}</div>
+          <div class="card-body" (click)="showCard(plane)">
+            <div class="mb-3">
+                <label for="name" card-title><fa-icon [icon]="faTags"></fa-icon>: {{plane.name}}</label>
+            </div>
+            <div class="mb-3">
+              <label for="departure"><fa-icon [icon]="faPlaneDeparture"></fa-icon>: {{plane.departure}}</label>
+            </div>
+            <div class="mb-3">
+              <label for="arrival"><fa-icon [icon]="faPlaneArrival"></fa-icon>: {{plane.arrival}}</label>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-primary m-1" (click)="onSelect(plane)" routerLink="/aircraft/edit/{{i+1}}">Edit</a>
+            <a class="btn btn-danger" (click)="delete(plane)">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+</section>

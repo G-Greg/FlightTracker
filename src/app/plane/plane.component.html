@@ -1,0 +1,55 @@
+<div class="container ">
+  <h1>Aircraft</h1>
+  <form class="col-md-4">
+    <div class="mb-3">
+      <label for="name"><fa-icon [icon]="faTags"></fa-icon> Airline name</label>
+      <input type="text" class="form-control" id="name1" name="name1" placeholder="Enter name" [(ngModel)]="search">
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" (click)="getApi()" [disabled]="disabled">Search</button>
+        </div>
+        <div class="col-3" *ngIf="dataSize > 0">
+          <label>Choose a result</label>
+        </div>
+        <div class="col-3" *ngIf="dataSize > 0">
+          <input type="number" class="form-control" name="num" [(ngModel)]="selectedPlane" min="0" [max]="dataSize" (click)="change()">
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="departure"><fa-icon [icon]="faPlaneDeparture"></fa-icon> Departure</label>
+      <input type="text" class="form-control" id="departure" name="departure" [(ngModel)]="departure" >
+    </div>
+
+    <div class="mb-3">
+      <label for="arrival"><fa-icon [icon]="faPlaneArrival"></fa-icon> Arrival</label>
+      <input type="text" class="form-control" id="arrival" name="arrival" [(ngModel)]="arrival">
+    </div>
+
+    <div class="mb-3">
+      <label for="flightDate"><fa-icon [icon]="faCalendarDay"></fa-icon> Flight date</label>
+      <input type="text" class="form-control" id="flightDate" name="flightDate" [(ngModel)]="flightDate">
+    </div>
+
+    <div class="mb-3">
+      <label for="flightStatus"><fa-icon [icon]="faEarthAmericas"></fa-icon> Flight status</label>
+      <input type="text" class="form-control" id="flightStatus" name="flightStatus" [(ngModel)]="flightStatus">
+    </div>
+    <div class="mb-3">
+
+      <a type="submit" class="btn btn-success" (click)="save()">Save</a>
+      
+      <a class="btn btn-warning m-1" routerLink="/aircrafts">Back</a>
+      <router-outlet></router-outlet>
+    </div>
+  </form>
+
+</div>
+
+<!--
+    <p>{{plane.id}}</p>
+    <p>{{plane.name}}</p>
+    [(ngModel)]="plane.name"
+-->
