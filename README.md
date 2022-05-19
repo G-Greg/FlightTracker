@@ -20,6 +20,14 @@ Egy replőjárat részletesebb megjelenítésért rá kattintással előjön egy
 <img src="https://user-images.githubusercontent.com/24989500/169369743-304b97ba-18e4-42d9-8617-9c6ce14a6b50.png" width="300">
 
 
+### Routes
+| METHOD | DESCRIPTIONS | URL
+| --- | --- | --- |
+| LIST | Összes repülőjárat listázása | `/aircrafts`
+| CREATE | Új repülőjárat hozzadása | `/aircraft/new`
+| READ | ID alapján repülőjárat megjelenítése | `/aircraft/:id`
+| UPDATE | ID alapján repülőjárat szerkesztése | `/aircraft/edit/:id`
+
 ## Használata
 
 Szükséges egy ingyenes fiók létrehozása az API kulcs miatt [https://aviationstack.com/](https://aviationstack.com/) ezen az oldalon.
