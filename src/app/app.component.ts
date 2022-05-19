@@ -26,6 +26,6 @@ export class AppComponent {
 
   initFlightTracker(){
     this.planes = PLANE
-    //this.router.navigate(['/aircraft/new']);
+    this.router.navigate(['/aircrafts']);
   }
 }
