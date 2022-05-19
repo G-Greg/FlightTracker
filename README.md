@@ -1,27 +1,38 @@
-# FlightTracker
+# Flight Tracker
+[![Npm package version](https://badgen.net/badge/Angular%20CLI/v13.3.5/red)](https://www.npmjs.com/package/@angular/cli)
+[![Npm package version](https://badgen.net/badge/@fortawesome%2Freact-fontawesome/v0.1.18/cyan)](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+## Repülőjáratok lekérdezését szolgáló webalkalmazás
 
-## Development server
+Az alkalmazás segítésével lekérdezhető valós idejű repülőjáratok. Erre egy API weboldal szolgáltató gondoskodik, ami a [https://aviationstack.com/](https://aviationstack.com/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Kezelőfelület
 
-## Code scaffolding
+A főoldal egyből a repülőjáratok listázására irányít át, ahol látható egy pár repülőjárat.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<img src="https://user-images.githubusercontent.com/24989500/169370240-a530613c-fb42-43f8-b75d-3e79acbae28f.png" width="800">
 
-## Build
+Lehetőségünk van a CRUD alapműveleteire a repülőjáratokkal. 
+Az `airline names` jegyzettömbben található előre kigyűjtött légitársaságok nevei. A létrehozás egy kereső mezővel kezdődik. Az API-on keresztül lekérdezi a beírt paraméternek megfelelő légitársaságot. Majd több azonos légitársaság repülőjáratai közül választhatunk, hogy melyik szeretnénk elmenteni.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Egy replőjárat részletesebb megjelenítésért rá kattintással előjön egy felugró ablak ahol a kiválasztott repülőjárat valós adatai jelennek meg.
 
-## Running unit tests
+<img src="https://user-images.githubusercontent.com/24989500/169369743-304b97ba-18e4-42d9-8617-9c6ce14a6b50.png" width="300">
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Használata
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Szükséges egy ingyenes fiók létrehozása az API kulcs miatt [https://aviationstack.com/](https://aviationstack.com/) ezen az oldalon.
+Az API kulcsot pedig illesszük be a `plane.component`-nek az `apikey=''` attribútumához.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Node.js](https://nodejs.org/) telepítés után a projekt könyvtárában egy terminál ablakban az alábbi parancsok kiadásával indítható program.
+Első futtatáskor a node modulok telepítése szükséges.
+```
+npm install
+```
+Projekt indítása.
+```
+ng serve
+```
+Az alkalmazás a [https://localhost:4200](http://localhost:4200/) porton fut.
